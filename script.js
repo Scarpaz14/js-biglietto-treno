@@ -10,7 +10,7 @@
 // INIZIO------ 
 
 // Prezzo fisso biglietto 
-const PriceforKm = Number("0.21")
+const PriceforKm = Number("0.21");
 
 // chiedo quanti km vuole percorrere 
 const KmNumber= Number(prompt("Quanti kilometri vuoi percorrere?"));
@@ -33,8 +33,9 @@ else{
     Discount=PriceTicket;
 }
 
-document.getElementById("ticket").innerHTML=Discount.toFixed(2) + "€" ;
-
+// stampiamo in html alcuni valori 
+document.getElementById("ticket").innerHTML=Discount.toFixed(2) + "€";
+document.getElementById("ticket-standard").innerHTML=PriceTicket.toFixed(2) + "€";
 
 
 
