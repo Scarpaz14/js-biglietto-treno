@@ -22,21 +22,33 @@ const Age= Number(prompt("Quanti anni hai?"));
 const PriceTicket = (KmNumber * PriceforKm);
 
 // applichiamo uno sconto in base all'età
-let Discount;
+let PriceDiscounted;
 if ( Age < 18 ) {
-    Discount = PriceTicket -  (PriceTicket * 20 / 100);
+    PriceDiscounted = PriceTicket -  (PriceTicket * 20 / 100);
 }
 else if ( Age >= 65 ) {
-    Discount = PriceTicket - (PriceTicket * 40 / 100);
+    PriceDiscounted = PriceTicket - (PriceTicket * 40 / 100);
 } 
+
 else{
-    Discount=PriceTicket;
+    PriceDiscounted = PriceTicket;
 }
 
 // stampiamo in html alcuni valori 
-document.getElementById("ticket").innerHTML=Discount.toFixed(2) + "€";
+document.getElementById("ticket").innerHTML=PriceDiscounted.toFixed(2) + "€";
 document.getElementById("ticket-standard").innerHTML=PriceTicket.toFixed(2) + "€";
 
 
+let Discount;
 
+if ( Age < 18 ) {
+    Discount = (PriceTicket * 20 / 100);
+}
+else if ( Age >= 65 ) {
+    Discount =  (PriceTicket * 40 / 100);
+} 
+else{
+    Discount = Number(0);
+}
 
+document.getElementById("discount").innerHTML=Discount.toFixed(2) + "€";
